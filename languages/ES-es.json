@@ -1,0 +1,21 @@
+{
+ "error": {
+  "uso": "Uso incorrecto del comando",
+  "noArgs": {
+   "mention": "Necesita mencionar a un usuario.",
+   "arg": "Necesita escribir un mensaje como argumento.",
+   "channel": "Necesita mencionar a un canal de texto.",
+   "rol": "Necesita mencionar a un rol."
+  },
+  "incoArgs": {
+   "text": "Argumento incorrecto.",
+   "cmd": "Comando incorrecto."
+  },
+  "noFound": {
+   "cmd": "Comando no encontrado.",
+   "channel": "Canal no encontrado.",
+   "mention": "Usuario no encontrado"
+  },
+  "noPerms": "No tienes suficientes permisos para usar este comando."
+ }
+}
