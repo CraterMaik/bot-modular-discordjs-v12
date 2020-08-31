@@ -14,7 +14,7 @@ module.exports = {
   }
  },
  addPrefix: async function (idserver, prefix) {
-  let query = "INSERT INTO prefixes (idserver) VALUES(?, ?)"
+  let query = "INSERT INTO prefixes (idserver, prefix) VALUES(?, ?)"
   await queries.runQuery(query, [idserver, prefix])
 
  },
