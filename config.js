@@ -2,7 +2,7 @@ module.exports = {
  dirBase : './database/base_1.db',
  superusers: [], //Puedes añadir ID
  token: 'TOKEN-HERE',
- ytKey: 'YT-KEY'
+ ytKey: 'YT-KEY',
  prefix: '?',
  statusBOT: 'Estoy listo!',
  categories: [
