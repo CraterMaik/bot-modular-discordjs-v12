@@ -5,6 +5,7 @@ const fs = require('fs')
 
 /* Config Music */
 client.queue = new Map();
+client.skipvote = new Map();
 
 for (let file of fs.readdirSync("./events/")) {
  if(file.endsWith(".js")) {
