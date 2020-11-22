@@ -20,8 +20,9 @@ module.exports = class stopCommand extends Command {
    if(!serverQueue) return msg.channel.send('No hay canciones reproduciendo.')
 
    serverQueue.songs = [];
+   
    await serverQueue.connection.dispatcher.end();
    return msg.channel.send('Canciones detenidas.')
-
+   
   }
  }

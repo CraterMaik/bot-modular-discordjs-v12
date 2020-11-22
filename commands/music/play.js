@@ -21,6 +21,9 @@ module.exports = class playCommand extends Command {
   const queue = client.queue;
   let guild = msg.guild;
 
+  const map = client.skipvote;
+  
+
   const voiceChannel = msg.member.voice.channel;
 
   if(!voiceChannel) return msg.channel.send('Debes estar conectado a un canal de voz.');
@@ -42,7 +45,8 @@ module.exports = class playCommand extends Command {
    const dispatcher = await serverQueue.connection.play(stream)
     .on('finish', async () => {
      serverQueue.songs.shift();
-
+     
+     await map.delete(guild.id);
      await play(guild, serverQueue.songs[0])
 
     })
@@ -50,7 +54,19 @@ module.exports = class playCommand extends Command {
 
     dispatcher.setVolume(serverQueue.volume)
 
-    return msg.channel.send(`Reproduciendo ${song.title}`)
+    let durationSeconds = song.duration.seconds < 9 ? '0' + song.duration.seconds : song.duration.seconds;
+    let durationMinutes = song.duration.minutes < 9 ? '0' + song.duration.minutes : song.duration.minutes;
+    let durationHours = song.duration.hours < 9 ? '0' + song.duration.hours : song.duration.hours;
+    // 02:05:22
+    const embedSong = new discord.MessageEmbed()
+     .setTitle(song.title)
+     .setColor("RANDOM")
+     .setThumbnail(song.thumbnail)
+     .setDescription(`Duración: **${durationHours}:${durationMinutes}:${durationSeconds}**`)
+     .setURL(song.url)
+     .setFooter(song.publish);
+
+    return msg.channel.send(`Reproduciendo ahora:`, {embed: embedSong})
 
   }
   async function handleVideo(video, playlist) {
@@ -58,13 +74,34 @@ module.exports = class playCommand extends Command {
    const song = {
     title: video.title,
     id: video.id,
+    duration: video.duration,
+    publish: video.publishedAt,
+    thumbnail: video.thumbnails.default.url,
     url: `https://www.youtube.com/watch?v=${video.id}`
+
    }
 
    if (serverQueue) {
     // Que ya existe dispatcher Reproduciendo
     await serverQueue.songs.push(song)
     if(playlist) return;
+
+    let durationSeconds = song.duration.seconds < 9 ? '0' + song.duration.seconds : song.duration.seconds;
+    let durationMinutes = song.duration.minutes < 9 ? '0'+song.duration.minutes : song.duration.minutes;
+    let durationHours = song.duration.hours < 9 ? '0' + song.duration.hours : song.duration.hours;
+     // 02:05:22
+    const embedQueue = new discord.MessageEmbed()
+     .setTitle(song.title)
+     .setColor("RANDOM")
+     .setThumbnail(song.thumbnail)
+     .setDescription(`Duración: **${durationHours}:${durationMinutes}:${durationSeconds}**`)
+     .setURL(song.url)
+     .setFooter(song.publish);
+
+    // console.log(song.duration);
+
+    return msg.channel.send('Canción agrega a la cola de espera: ', { embed: embedQueue });
+    
 
    } else {
     // No existe
