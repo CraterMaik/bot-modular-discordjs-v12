@@ -23,7 +23,6 @@ module.exports = class playCommand extends Command {
 
   const map = client.skipvote;
   
-
   const voiceChannel = msg.member.voice.channel;
 
   if(!voiceChannel) return msg.channel.send('Debes estar conectado a un canal de voz.');
@@ -39,7 +38,8 @@ module.exports = class playCommand extends Command {
 
    const stream = ytdl(song.url, {
     filter: 'audioonly',
-    highWaterMark: 1 << 25
+    highWaterMark: 1 << 25,
+    quality: "highestaudio"
    })
    
    const dispatcher = await serverQueue.connection.play(stream)
