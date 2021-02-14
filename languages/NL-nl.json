@@ -1,0 +1,21 @@
+{
+ "error": {
+  "uso": "Onjuist gebruik van de command.",
+  "noArgs": {
+   "mention": "Tag een gebruiker.",
+   "arg": "Je moet een bericht schrijven als argument.",
+   "channel": "Tag een channel.",
+   "rol": "Tag een rol."
+  },
+  "incoArgs": {
+   "text": "Fout argument.",
+   "cmd": "Foute command."
+  },
+  "noFound": {
+   "cmd": "Command niet gevonden.",
+   "channel": "Channel niet gevonden.",
+   "mention": "User niet gevonden."
+  },
+  "noPerms": "Jij hebt niet genoeg permissies om deze command uit te voeren."
+ }
+}
