@@ -1,0 +1,21 @@
+{
+ "error": {
+  "uso": "Utilisation incorrecte de la commande",
+  "noArgs": {
+   "mention": "Mentionnez un utilisateur.",
+   "arg": "Vous devez écrire un message comme argument.",
+   "channel": "Mentionnez un channel.",
+   "rol": "Mentionner un rôle."
+  },
+  "incoArgs": {
+   "text": "Mauvais argument.",
+   "cmd": "Mauvaise commande."
+  },
+  "noFound": {
+   "cmd": "Commande non trouvée.",
+   "channel": "Channel introuvable.",
+   "mention": "Utilisateur non trouvé."
+  },
+  "noPerms": "Vous n'avez pas assez d'autorisations pour utiliser cette commande."
+ }
+}
