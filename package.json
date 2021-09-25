@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
-    "discord.js": "^12.5.1",
+    "discord.js": "^12.5.3",
     "ffmpeg-static": "^4.4.0",
     "simple-youtube-api": "^5.2.1",
     "sqlite3": "^5.0.2",
