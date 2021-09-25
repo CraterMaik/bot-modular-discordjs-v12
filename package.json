@@ -19,6 +19,6 @@
     "simple-youtube-api": "^5.2.1",
     "sqlite3": "^5.0.0",
     "youtube-search": "^1.1.4",
-    "ytdl-core": "^4.2.1"
+    "ytdl-core": "^4.9.1"
   }
 }
