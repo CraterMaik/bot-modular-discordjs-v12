@@ -18,7 +18,7 @@
     "ffmpeg-static": "^4.4.0",
     "simple-youtube-api": "^5.2.1",
     "sqlite3": "^5.0.2",
-    "youtube-search": "^1.1.4",
+    "youtube-search": "^1.1.6",
     "ytdl-core": "^4.9.1"
   }
 }
